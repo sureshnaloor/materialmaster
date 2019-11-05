@@ -1,0 +1,1 @@
+mongoimport --host JAL-shard-0/jal-shard-00-00-gkacc.mongodb.net:27017,jal-shard-00-01-gkacc.mongodb.net:27017,jal-shard-00-02-gkacc.mongodb.net:27017 --ssl --jsonArray --username suresh --password ironhair --authenticationDatabase admin --db materials --collection matmaster --type json --file output.json
