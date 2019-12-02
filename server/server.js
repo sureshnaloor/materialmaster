@@ -4,12 +4,16 @@ var cors= require('cors')
 
 // routes
 
-const matcodes = require('./routes/api/matcodes')
+const matcodes = require('./routes/api/matcodes');
+const vendors = require('./routes/api/vendors');
+const valstock = require('./routes/api/valstock');
+const completestock=require('./routes/api/completestock');
+const matdocs = require('./routes/api/matdocs');
+const matpurchases = require('./routes/api/matpurchases');
 
 const xlsToJson = require('xls-to-json');
 
 const app = express();
-app.use(express.json({ extended: false }));
 
 // const router = express.Router()
 
@@ -53,6 +57,11 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 // use Routes
 app.use('/api/matcodes', matcodes);
+app.use('/api/vendors', vendors);
+app.use('/api/valstock', valstock);
+app.use('/api/completestock', completestock);
+app.use('/api/matdocs', matdocs);
+app.use('/api/matpurchases', matpurchases)
 
 // app.get('/test', (req, res) => res.json({msg: "Hi testing"}) )
 
