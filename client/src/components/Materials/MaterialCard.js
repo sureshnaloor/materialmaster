@@ -1,29 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import '../App.css'
+import '../../App.css'
 
 const RowMatcodeStyle = {
+    fontFamily: 'Roboto', 
     color: "Maroon",
     fontSize:"14px"  
 }
 
 const RowMatdescStyle = {
+    fontFamily: 'Roboto', 
     color: "Peru",
-    fontStyle: "italic",
     textAlign: "left",
-    fontSize:"16px"
+    fontSize:"14px"
+}
+
+const invTableStyle = {
+    position: "relative",
+    left: "30%",
+    width: "60%"
 }
 
 const MaterialCard = (props) =>  {    
     const {matcodes, isLoading} = props  
         if (isLoading) {
-            return (<><img src = {require('../images/2.gif')} alt="loading"/> <h5> Loading.....</h5></>)
+            return (<><img src = {require('../../images/2.gif')} alt="loading"/> <h5> Loading.....</h5></>)
         }
         else {
         return (
             <>
-                <table className="table table-hover table-striped table-sm">
+                <table style = {invTableStyle} className="table table-hover table-striped table-sm">
                   <thead className="black white-text">
                         <tr>
                             <th scope="col"> </th>
@@ -38,18 +44,17 @@ const MaterialCard = (props) =>  {
                   
                        { matcodes.map((mat, index) =>                 
                   
-                        <tr key={index}>
+                        <tr key={mat._id}>
                             <th scope="row"><Link to = {`/show-material/${mat._id}`}><i className="fas fa-binoculars"></i> </Link></th>
                             <td> {index+1} </td>
                             <td style={RowMatcodeStyle}>{mat.MaterialCode}</td>
                             <td style={RowMatdescStyle}>{mat.MaterialDescription}</td>
                             <td>{mat.UOM}</td>
                             <td>{mat.MaterialGroup}</td>
-                        </tr>            
-                  )}                
+                        </tr>   
+                        )}
                   </tbody>          
-            </table>
-            )}
+            </table>            
         </>      
         )    
     }

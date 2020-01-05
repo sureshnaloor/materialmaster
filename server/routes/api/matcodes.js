@@ -18,17 +18,20 @@ router.get('/', (req,res) => res.json({message: "inside matcode model route"}))
 // access: Public
 router.get('/all', (req, res) => {
     try{
+        console.log(`fetch started at ${new Date().getSeconds()}`)
         Matcodes.find()        
             .then(matcodes => res.json(matcodes))
+            .then(() => console.log(`fetch ended at ${new Date().getSeconds()}`))
     }catch(err){
         console.error(err.message)
-    }    
+    }  
 });
 
 router.get('/matgroup/:matgroup', (req, res) => {
     try{
         Matcodes.find({MaterialGroup: req.params.matgroup})        
             .then(matcodes => res.json(matcodes))
+            
     }catch(err){
         console.error(err.message)
     }    
