@@ -18,6 +18,6 @@ router.get('/:matcode', (req, res) => {
   });
 
   // to do
-  // wbs wise and sale order wise purchases
+  // wbs wise and sale order wise purchases, also vendor wise purchases
 
 module.exports = router; 

@@ -11,6 +11,9 @@ import ShowMaterials from './components/Materials/ShowMaterials.';
 import ShowMaterialDetails from './components/Materials/ShowMaterialDetails';
 import MaterialTransactions from './components/Materials/MaterialTransactions';
 import UpdateMaterialInfo from './components/Materials/UpdateMaterialInfo';
+import ShowVendors from './components/Vendors/ShowVendors';
+import ShowVendorDetails from './components/Vendors/ShowVendorDetails';
+import PlantwiseCumulative from './components/Stock/PlantwiseCumulative';
 
 class App extends Component {
   render(){
@@ -30,6 +33,11 @@ class App extends Component {
           <Route path='/transactions/:matcode' component={MaterialTransactions} />
           <Route path='/show-matgroups' exact={true} component={ShowMaterialGroups} />
           <Route path='/show-materialgwise/:mg' exact = {true} component={MatGroupwise} />
+
+          <Route path='/show-vendors' component={ShowVendors} />
+          <Route path='/show-vendor/:id' component={ShowVendorDetails} />
+
+          <Route path='/plantwise-stk' component={PlantwiseCumulative} />
       </div>  
     </div>
     </Router>
