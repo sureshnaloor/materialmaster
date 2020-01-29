@@ -8,31 +8,100 @@
  }
 
 .App-header {
-  background-color: #dde2ee;
+  background-color: #cecfd3;
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: rgb(68, 63, 63);
 }
 
 .App-header h4 {
   font-family: 'Alatsi';
-  text-shadow: '1px 1px 4
-  px rgba(0, 0, 0, 0.6)';
+  font-size: 1.5rem;
+  flex-grow: 4;
+  font-weight: 900;
+  border: 0.1rem solid #663399;
+  box-shadow:1px 2px saddlebrown;
+  margin: 10px 20px 10px;
+  padding: 10px;
+  background-color: rgb(245, 233, 225);
+  }
+
+.App-header p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 300px;
+  padding-right: 20px;
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  border: 0.5px solid #b681eb;
+  border-radius:5px;
+  box-shadow: 1px 2px sandybrown;
+  margin-right: 5px;  
+  color: #fff;
+  background-color: rgb(147, 143, 240);;
 }
 
-
+.App-header p span {
+  font-style: italic;
+  font-weight: bold;
+  font-size: large;
+}
+.App-header img {
+  flex: 0 0 150px;
+  padding: 5px 15px 10px;
+  height: 60px;
+  width: 200px;
+  border: 1px solid #663399;
+  border-radius: 10px;
+  margin-left: 5px;
+  transition: box-shadow 0.2s;
+  background-color: skyblue;
+}
+.App-header img:hover {
+  box-shadow: 1px 3px blue;
+}
 .App-link {
   color:#61dafb;
+}
+
+.mainnav {
+  background-color: #f3f5f7;
+}
+.mainnav-menu {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40px;
+  list-style-type: none;
+  border-bottom: 1px solid #663399;
+  padding-bottom: 20px;
+  padding-top: 20px;  
+}
+
+.mainnav-link a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;  
+  font-size: small;
+  opacity: 0.75;
+  padding: 5px 5px 5px;
+}
+
+.mainnav-link a:hover {
+  box-shadow: 1px 2px royalblue;
+  color: #fff;
+  background-color: green;
+ 
 }
 
 .CreateMaterial{
   background-color: #f3b5b5
 }
-
 .ShowMaterialDetails{
   background-color: #ccbbaa
 }

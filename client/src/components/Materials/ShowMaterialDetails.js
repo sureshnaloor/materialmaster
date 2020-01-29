@@ -4,7 +4,7 @@ import '../../App.css';
 import axios from 'axios';
 
 const ShowMaterialDetails = (props) => {
-    const [matcodes, setMatcodes] = useState([])
+    const [matcodes, setMatcodes] = useState([])  
     
     useEffect(() => {
         axios.get("http://localhost:5000/api/matcodes/"+props.match.params.id)
@@ -14,7 +14,7 @@ const ShowMaterialDetails = (props) => {
                 
             })
             .catch(err => {
-                console.log(`error: there is some fetch error, check backend`)
+                console.log(`error: there is some fetch error, check backend ${err}`)
             })
     }, []);
 

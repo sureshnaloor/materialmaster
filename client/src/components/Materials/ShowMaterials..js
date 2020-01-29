@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css'
-import MaterialCard from './MaterialCard';
+import MaterialCardAll from './MaterialCardAll';
 import axios from 'axios'
 
 const ShowMaterials = () => {
@@ -18,8 +18,7 @@ useEffect(() => {
 }, []);
 
 return (   
-    <MaterialCard matcodes = {matcodes} isLoading = {isLoading}/>       
+    <MaterialCardAll matcodes = {matcodes} isLoading = {isLoading}/>       
 )
 }
-
 export default ShowMaterials

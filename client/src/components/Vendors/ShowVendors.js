@@ -8,9 +8,19 @@ const ShowVendors = () => {
     const [vendors, setVendors] = useState([])
     const [isLoading, setLoading ] = useState(true)
 
+    const GetSortOrder = (objkey) =>  {  
+        return function(a, b) {  
+            if (a[objkey] > b[objkey]) {  
+                return 1;  
+            } else if (a[objkey] < b[objkey]) {  
+                return -1;  
+            }  
+            return 0;   }  
+    }   
+
     const fetchVendors = async () => {
-        const resp = await axios("http://localhost:5000/api/vendors/all")
-        setVendors(resp.data)
+        const resp = await axios("http://localhost:5000/api/vendors/all")         
+        setVendors(resp.data.sort(GetSortOrder("VendorNumber")))
         setLoading(false)
         console.log(resp.data)
     }

@@ -7,11 +7,20 @@ import PieChart from 'react-minimal-pie-chart';
 const PlantwiseCumulative = () => {
     const [stkval, setData] = useState([])
 
+    const defaultLabelStyle = {
+        fontSize: '8px',
+        fontFamily: 'sans-serif',
+        fill: '#121212',
+            };
+    function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }    
+
     useEffect(() => {
         const fetchStkval = async () => {
         const result = await axios("http://localhost:5000/api/completestock/plantVal")
 
-        setData(result.data);
+        if (result.data) setData(result.data);
         // console.log(result.data)
         // console.log(stkval)
         };
@@ -19,25 +28,23 @@ const PlantwiseCumulative = () => {
     }, []);
 
     let dataval = []
+    let dataid = []
     stkval.map(val => {
-        return dataval.push(val.plantTotal)
+        dataval.push(val.plantTotal);
+        dataid.push(val._id);
     })
     return (    
         <>       
          <PieChart 
                     data={[
-                        { title: 'Dammam Stock', value: dataval[0], color: '#E38627' },
-                        { title: 'Jubail stock', value: dataval[1], color: '#C13C37' },                        
+                        { title: `${dataid[0]}  stock`, value: dataval[0], color: '#B0E0EE' },
+                        { title: `${dataid[1]}  stock`, value: dataval[1], color: '#B06581' },                        
                     ]}
-                    radius='10' cx="15" cy="12"
+                    radius='50' cx="50" cy="50" style={{ height: '200px' }} 
+                    label
+                    labelStyle={defaultLabelStyle}
                 />
-        <ul>
-            {stkval.map(val => (
-                <li key={val._id} >
-                    {val.plantTotal}
-                </li>
-            ))}
-        </ul>
+        
         </>
         
     )

@@ -24,7 +24,7 @@ router.get('/plantVal', (req,res) => {
   })
 })
 
-router.get('/sales/saleswise', (req,res) => {
+router.get('/saleswise', (req,res) => {
     Valstock.aggregate([
       {
         '$group': {
@@ -36,21 +36,21 @@ router.get('/sales/saleswise', (req,res) => {
       }, {
         '$match': {
           'salesTot': {
-            '$gt': 100000.00
+            '$gt': 100.00
           }
-        }
+        }        
       }
     ], (err,result) => {
       if(err) {
         console.log(err)
         return;
       }
-      // res.json(result)
-      console.log(result)
+      res.json(result)
+      // console.log(parseFloat((result[0].salesTot)).toFixed(2))
     })
   })
 
-  router.get('/wbs/wbswise', (req,res) => {
+  router.get('/wbswise', (req,res) => {
     Valstock.aggregate([
       {
         '$group': {
@@ -62,7 +62,7 @@ router.get('/sales/saleswise', (req,res) => {
       }, {
         '$match': {
           'wbsTot': {
-            '$gt': 100000.00
+            '$gt': 100.00
           }
         }
       }
@@ -72,7 +72,7 @@ router.get('/sales/saleswise', (req,res) => {
         return;
       }
       res.json(result)
-      console.log(result)
+      // console.log(result)
     })
   })
 

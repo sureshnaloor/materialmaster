@@ -3,22 +3,40 @@ import { Link } from 'react-router-dom';
 import '../../App.css'
 
 const RowVendorStyle = {
-    fontFamily: 'Roboto', 
+    fontFamily: "'Open Sans', sans-serif", 
     color: "Maroon",
     fontSize:"14px"  
 }
 
 const RowVendorNameStyle = {
-    fontFamily: 'Roboto', 
-    color: "Peru",
+    fontFamily: "'Open Sans', sans-serif",
+    color: "brown",
+    textAlign: "left",
+    fontSize:"14px"
+}
+const RowVendorOtherStyle1 = {
+    fontFamily: "'Open Sans', sans-serif",
+    color: "blue",
+    textAlign: "left",
+    fontSize:"14px"
+}
+
+const RowVendorOtherStyle2 = {
+    fontFamily: "'Open Sans', sans-serif",
+    color: "teal",
     textAlign: "left",
     fontSize:"14px"
 }
 
 const invTableStyle = {
     position: "relative",
-    left: "30%",
-    width: "60%"
+    left: "5px",
+    width: "60vw",
+    fontFamily:"'Courgette', cursive"    
+}
+
+const icon = {
+    fontSize: "12px"
 }
 
 const VendorCard = (props) => {
@@ -39,18 +57,24 @@ const VendorCard = (props) => {
                             <th scope="col" >Vendor Name </th>
                             <th scope="col">Country</th>
                             <th scope="col">City</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col">Sales Person</th>
+                            <th scope="col">Mobile No</th>
                         </tr>
                   </thead>  
                   <tbody>    
                   { vendors.map((vendor, index) =>                 
                   
                   <tr key={vendor._id}>
-                      <th scope="row"><Link to = {`/show-vendor/${vendor._id}`}><i className="fas fa-binoculars"></i> </Link></th>
-                      <td> {index+1} </td>
+                      <th scope="row"><Link to = {`/show-vendor/${vendor._id}`}><i style={icon} className="fas fa-binoculars"></i> </Link></th>
+                      <td style={RowVendorStyle}> {index+1} </td>
                       <td style={RowVendorStyle}>{vendor.VendorNumber}</td>
                       <td style={RowVendorNameStyle}>{vendor.Name}</td>
-                      <td>{vendor.Country}</td>
-                      <td>{vendor.City}</td>
+                      <td style={RowVendorOtherStyle1}>{vendor.Country}</td>
+                      <td style={RowVendorOtherStyle2}>{vendor.City}</td>
+                      <td style={RowVendorOtherStyle1}>{vendor.Telephone}</td>
+                      <td style={RowVendorOtherStyle2}>{vendor.Salesperson}</td>
+                      <td style={RowVendorOtherStyle1}>{vendor.MobileNo}</td>
                   </tr>   
                   )}
             </tbody>          

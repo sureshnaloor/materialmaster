@@ -6,6 +6,13 @@ const AllStock = require('../../models/AllStock');
 
 router.get('/test', (req,res)=> res.json('all stock route testing'))
 
+router.get('/all', (req, res) => {
+  AllStock.find({ClosingValue:{$gt: 1000}}).sort({"ClosingValue": -1}).exec()
+    .then(allstk => res.json(allstk))
+    .catch(err => res.status(404).json(err));
+});
+
+
 router.get('/plantVal', (req,res) => {
   AllStock.aggregate([
     {
@@ -35,6 +42,12 @@ router.get('/:id', (req,res) => {
     .then(stk=> res.json(stk))
     .catch(err => res.status(404).json(err))
 })
+
+router.get('/mat/all', (_, res) => {
+  Allstock.find()
+    .then(allstk => res.json(allstk))
+    .catch(err => res.status(404).json(err));
+});
 
 
 
