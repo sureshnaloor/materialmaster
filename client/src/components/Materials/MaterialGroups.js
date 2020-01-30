@@ -92,11 +92,8 @@ const ShowMaterialGroups = () => {
                         )}
                         
                   </tbody>          
-            </table>     
-                   
-                            
-        </div>      
-         
+            </table>                              
+        </div>        
     )}
     }
     

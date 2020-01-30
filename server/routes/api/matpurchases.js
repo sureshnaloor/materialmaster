@@ -9,7 +9,7 @@ const Matpurchases = require('../../models/MatPurchases');
 // description matmaster get route testing
 // access Public
 
-router.get('/test', (req, res) => res.send('Material Purchases route testing!')); 
+router.get('/test', (_, res) => res.send('Material Purchases route testing!')); 
 
 router.get('/:matcode', (req, res) => {
     Matpurchases.find({Material: req.params.matcode})

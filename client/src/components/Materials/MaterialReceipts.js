@@ -36,7 +36,7 @@ const invTableStyle2 = {
     boxShadow:"3px 3px 5px",
     fontFamily:"'Courgette', cursive"
 }
-const MaterialTransactions = (props) => {
+const MaterialReceipts = (props) => {
     const [matdocs, setMatdocs] = useState([]);
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const MaterialTransactions = (props) => {
                 // console.log('inside axiios fetch')
                 let fildata = []
                 for (let i=0; i<res.data.length; i++){
-                    if (res.data[i].MovementType === '201' || res.data[i].MovementType === '221' || res.data[i].MovementType === '261' || res.data[i].MovementType === '281'){
+                    if (res.data[i].MovementType === '101' || res.data[i].MovementType === '105'){
                         // console.log('caught')
                         fildata.push(res.data[i])
                     }
@@ -98,4 +98,4 @@ const MaterialTransactions = (props) => {
     )
 }
 
-export default MaterialTransactions
+export default MaterialReceipts

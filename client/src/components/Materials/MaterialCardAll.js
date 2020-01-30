@@ -35,7 +35,7 @@ const invTableStyle2 = {
 const MaterialCardAll = (props) =>  {    
     const {matcodes, isLoading} = props  
     if (isLoading) {
-        return (<><img src = {require('../../images/2.gif')} alt="loading"/> <h5> Generating sale orderwise stock values.....</h5></>)
+        return (<><img src = {require('../../images/2.gif')} alt="loading"/> <h5> Generating the materials list.....</h5></>)
     }
     else
         {
@@ -56,7 +56,7 @@ const MaterialCardAll = (props) =>  {
                        { matcodes.map((mat, index) =>              
                         
                         <tr key={mat._id}>
-                            <th scope="row"><Link to = {`/show-material/:${mat._id}`}><i className="fas fa-minus-square"></i> </Link></th>
+                            <th scope="row"><Link to = {`/show-material/${mat._id}`}><i className="fas fa-minus-square"></i> </Link></th>
                             <td> {index+1} </td>
                             <td style={RowMatcodeStyle}>{mat.MaterialCode}</td>
                             <td style={RowMatdescStyle}>{mat.MaterialDescription}</td>

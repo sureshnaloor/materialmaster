@@ -16,10 +16,10 @@ router.get('/', (req,res) => res.json({message: "inside matcode model route"}))
 // GET /api/matcodes
 // description: Get all Matcodes
 // access: Public
-router.get('/all', (req, res) => {
+router.get('/all', (_, res) => {
     try{
         console.log(`fetch started at ${new Date().getSeconds()}`)
-        Matcodes.find()        
+        Matcodes.find().lean()        
             .then(matcodes => res.json(matcodes))
             .then(() => console.log(`fetch ended at ${new Date().getSeconds()}`))
     }catch(err){
