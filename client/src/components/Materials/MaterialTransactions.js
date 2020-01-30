@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+import {useParams} from 'react-router-dom';
+
 import axios from 'axios'
 
 const RowMatcodeStyle = {
@@ -38,21 +40,23 @@ const invTableStyle2 = {
 }
 const MaterialTransactions = (props) => {
     const [matdocs, setMatdocs] = useState([]);
-
+    let {matcode }= useParams()
+    console.log(matcode)
     useEffect(() => {
-        console.log(props.match.params.matcode)
-        axios.get("http://localhost:5000/api/matdocs/"+props.match.params.matcode)
+        // console.log(props.match.params.matcode)
+        
+        axios.get(`http://localhost:5000/api/matdocs/${matcode.toString()}`)
             .then(res => {
                 console.log(res.data)
                 // console.log('inside axiios fetch')
                 let fildata = []
                 for (let i=0; i<res.data.length; i++){
-                    if (res.data[i].MovementType === '201' || res.data[i].MovementType === '221' || res.data[i].MovementType === '261' || res.data[i].MovementType === '281'){
+                    if (res.data[i].MovementType === '201' || res.data[i].MovementType === '221' || res.data[i].MovementType === '261' || res.data[i].MovementType === '281' || res.data[i].MovementType === '101' || res.data[i].MovementType === '105'){
                         // console.log('caught')
                         fildata.push(res.data[i])
                     }
                 }
-                // console.log(fildata)
+                console.log(fildata)
                 setMatdocs(fildata)   
                 // console.log(matdocs)                           
             })

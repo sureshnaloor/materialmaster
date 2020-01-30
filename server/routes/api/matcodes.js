@@ -19,7 +19,7 @@ router.get('/', (req,res) => res.json({message: "inside matcode model route"}))
 router.get('/all', (_, res) => {
     try{
         console.log(`fetch started at ${new Date().getSeconds()}`)
-        Matcodes.find().lean()        
+        Matcodes.find({MaterialGroup: "CM02"}).lean()        
             .then(matcodes => res.json(matcodes))
             .then(() => console.log(`fetch ended at ${new Date().getSeconds()}`))
     }catch(err){

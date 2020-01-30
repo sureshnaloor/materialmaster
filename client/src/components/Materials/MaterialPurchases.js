@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {useParams} from 'react-router-dom';
 import axios from 'axios'
 
 const RowMatcodeStyle = {
@@ -38,10 +39,9 @@ const invTableStyle2 = {
 }
 const MaterialPurchases = (props) => {
     const [matpurch, setMatdocs] = useState([]);
-
-    useEffect(() => {
-        console.log(props.match.params.matcode)
-        axios.get("http://localhost:5000/api/matpurchases/"+props.match.params.matcode)
+    let {matcode }= useParams()
+    useEffect(() => {        
+        axios.get("http://localhost:5000/api/matpurchases/"+matcode)
             .then(res => {
                 console.log(res.data)
                 // console.log('inside axiios fetch')
