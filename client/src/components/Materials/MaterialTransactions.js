@@ -41,7 +41,7 @@ const invTableStyle2 = {
 const MaterialTransactions = (props) => {
     const [matdocs, setMatdocs] = useState([]);
     let {matcode }= useParams()
-    console.log(matcode)
+    console.log(matcode, typeof(matcode))
     useEffect(() => {
         // console.log(props.match.params.matcode)
         

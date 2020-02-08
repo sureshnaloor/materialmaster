@@ -21,6 +21,7 @@ import SalesStock from './components/SpecialStock/SalesStock';
 import ProjectStock from './components/SpecialStock/ProjectStock';
 import MaterialTransactions from './components/Materials/MaterialTransactions';
 import MaterialReceipts from './components/Materials/MaterialReceipts';
+import Matsearchfc from './components/Search/Matsearch';
 
 class App extends Component {
   render(){
@@ -40,6 +41,7 @@ class App extends Component {
               <li className="mainnav-link"> <Link to="/show-materials"> <i className="fas fa-search"></i>Materials List </Link></li>
               <li className="mainnav-link"> <Link to="/wbswise-inv"> <i className="fas fa-street-view"></i> Project inv value </Link></li>
               <li className="mainnav-link"> <Link to="/saleswise-inv"> <i className="fas fa-street-view"></i> Sales order inv value </Link></li>
+              <li className="mainnav-link"> <Link to="/matsearch"> <i className="fas fa-street-view"></i> Search material and get details </Link></li>
           </ul>        
         </nav> 
                 
@@ -55,8 +57,7 @@ class App extends Component {
           <Route path='/matreceiptdocs/:matcode' component={MaterialReceipts} />
 
           <Route path='/show-matgroups' exact={true} component={ShowMaterialGroups} />
-          <Route path='/show-materialgwise/:mg' exact = {true} component={MatGroupwise} />
-          
+          <Route path='/show-materialgwise/:mg' exact = {true} component={MatGroupwise} />          
 
           <Route path='/show-vendors' component={ShowVendors} />
           <Route path='/show-vendor/:id' component={ShowVendorDetails} />
@@ -67,6 +68,7 @@ class App extends Component {
           <Route path='/saleswise-inv' component = {SalesStock} />
           <Route path='/wbswise-inv' component = {ProjectStock } />
 
+          <Route path='/matsearch' exact = {true} component={Matsearchfc} />
         </Switch>
         
       </div>  

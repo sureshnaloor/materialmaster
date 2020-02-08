@@ -10,16 +10,19 @@ const Matgroup = require('../../models/MatGroup');
 // description matmaster get route testing
 // access Public
 
-router.get('/test', (req, res) => res.send('route testing!')); 
-router.get('/', (req,res) => res.json({message: "inside matcode model route"}))
+router.get('/test', (_, res) => res.send('route testing!')); 
+router.get('/', (_,res) => res.json({message: "inside matcode model route"}))
 
 // GET /api/matcodes
 // description: Get all Matcodes
 // access: Public
-router.get('/all', (_, res) => {
+router.get('/all/:pg', (req, res) => {
     try{
+        
+        const skipCount = req.params.pg * 1000;
+        console.log(skipCount)
         console.log(`fetch started at ${new Date().getSeconds()}`)
-        Matcodes.find({MaterialGroup: "CM02"}).lean()        
+        Matcodes.find().sort({MaterialCode:1}).limit(1000).skip(skipCount).lean()        
             .then(matcodes => res.json(matcodes))
             .then(() => console.log(`fetch ended at ${new Date().getSeconds()}`))
     }catch(err){

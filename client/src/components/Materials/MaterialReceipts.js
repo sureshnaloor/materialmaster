@@ -41,14 +41,14 @@ const MaterialReceipts = (props) => {
     const [matdocs, setMatdocs] = useState([]);
     let {matcode } = useParams()
     useEffect(() => {        
-        axios.get("http://localhost:5000/api/matdocs/"+matcode)
+        axios.get("http://localhost:5000/api/matdocs/" + matcode)
             .then(res => {
                 console.log(res.data)
                 // console.log('inside axiios fetch')
                 let fildata = []
                 for (let i=0; i<res.data.length; i++){
                     if (res.data[i].MovementType === '101' || res.data[i].MovementType === '105'){
-                        // console.log('caught')
+                        console.log('caught')
                         fildata.push(res.data[i])
                     }
                 }

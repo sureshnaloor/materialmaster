@@ -8,6 +8,10 @@ import MaterialReceipts from './MaterialReceipts';
 
 const ShowMaterialDetails = (props) => {
     const [matcodes, setMatcodes] = useState([])  
+    
+    const [matval, setMatval] = useState([]);
+    
+    const [matspval, setSpmatval] = useState([]);
 
     const cardMat = {
         border: "1px solid red",
@@ -17,6 +21,7 @@ const ShowMaterialDetails = (props) => {
         boxShadow: "2px 2px 5px brown",
         backgroundColor:"F5E8ED"
             }
+
     const cardMat2 = {
         border: "1px solid teal",
         borderRadius: "10px",
@@ -51,21 +56,45 @@ const ShowMaterialDetails = (props) => {
     }
     
     useEffect(() => {
-        axios.get("http://localhost:5000/api/matcodes/"+props.match.params.id)
+        console.log(props.match.params.id)
+        axios.get("http://localhost:5000/api/matcodes/matcode/"+props.match.params.id)
             .then(res => {
-                // console.log(res.data)
-                setMatcodes(res.data)
-                
+                                setMatcodes(res.data.shift())               
             })
             .catch(err => {
                 console.log(`error: there is some fetch error, check backend ${err}`)
             })
     }, []);
 
+    useEffect(() => {
+        console.log(props.match.params.id)
+        axios.get("http://localhost:5000/api/valstock/mat/"+props.match.params.id)
+            .then(res => {
+                         setSpmatval((res.data.reduce((pr,cu) => pr+cu.SpecialStkValue,0
+                         )))                
+            },0)
+            .catch(err => {
+                console.log(`error: there is some fetch error, check backend ${err}`)
+            })
+    }, []);
+
+    useEffect(() => {
+        console.log(props.match.params.id)
+        axios.get("http://localhost:5000/api/completestock/mat/"+props.match.params.id)
+            .then(res => {                                             
+                            setMatval((res.data.reduce((pr,cu)=> pr+cu.ClosingValue,0.00)) )  
+            })
+            .catch(err => {
+                console.log(`error: there is some fetch error, check backend ${err}`)
+            })
+    }, []);
+   
+
     return (
             <>
             <div style ={matcontainer}>
             <div style={cardMat}>
+                
             <h5> Material: <span style={hilight}>{matcodes.MaterialDescription} </span> </h5> 
             <h6> Material Code:   <span style={hilight}>  {matcodes.MaterialCode} </span>  </h6>
             <h6> Unit of Measure {matcodes.UOM} </h6>
@@ -75,8 +104,8 @@ const ShowMaterialDetails = (props) => {
             </div>
             <hr/>
             <div style={cardMat2}>
-            <h5> Total stock value of the material: </h5>
-            <h5> Special stock value of material out of above: </h5>
+            <h5> Total stock value of the material: {matval} SAR </h5>
+            <h5> Special stock value of material out of above: {matspval} SAR </h5>
             </div>
             </div>
             <Router> 

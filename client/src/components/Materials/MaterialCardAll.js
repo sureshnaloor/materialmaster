@@ -56,7 +56,7 @@ const MaterialCardAll = (props) =>  {
                        { matcodes.map((mat, index) =>              
                         
                         <tr key={mat._id}>
-                            <th scope="row"><Link to = {`/show-material/${mat._id}`}><i className="fas fa-minus-square"></i> </Link></th>
+                            <th scope="row"><Link to = {`/show-material/${mat.MaterialCode}`}><i className="fas fa-minus-square"></i> </Link></th>
                             <td> {index+1} </td>
                             <td style={RowMatcodeStyle}>{mat.MaterialCode}</td>
                             <td style={RowMatdescStyle}>{mat.MaterialDescription}</td>
