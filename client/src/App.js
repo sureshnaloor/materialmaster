@@ -21,7 +21,7 @@ import SalesStock from './components/SpecialStock/SalesStock';
 import ProjectStock from './components/SpecialStock/ProjectStock';
 import MaterialTransactions from './components/Materials/MaterialTransactions';
 import MaterialReceipts from './components/Materials/MaterialReceipts';
-import Matsearchfc from './components/Search/Matsearch';
+import Matsearchfc from './components/Search/Matsearchfc';
 
 class App extends Component {
   render(){
