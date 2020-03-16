@@ -11,7 +11,7 @@ const MatmasterSchema = new mongoose.Schema({
     },
 
     MaterialCode: {
-        type: String, 
+        type: String,
         required: true
     },
 
@@ -49,7 +49,19 @@ const MatmasterSchema = new mongoose.Schema({
 
     transactionFlag: {
         type: String
+    },
+
+    cleansedFlag: {
+        type: Boolean
+    },
+
+    cleansedOn: {
+        type: Date
+    },
+
+    cleansedBy: {
+        type: String
     }
-}, {collection: 'matmaster'})
+}, { collection: 'matmaster' })
 
 module.exports = Matmaster = mongoose.model('matmaster', MatmasterSchema)
