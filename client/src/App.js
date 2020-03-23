@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
-
-import logo from './images/JALLogo.png'
+import Header from './Header';
+import Mainnav from './Mainnav';
 
 import FrontPage from './components/FrontPage'
 
@@ -28,22 +28,8 @@ class App extends Component {
   return (
     <Router>
     <div className="App">
-      <header className="App-header">  
-          <img src= {logo} /> 
-          <h4> JAL SAP Database portal </h4>
-          <p> <span>Internal SAP Portal </span>developed for estimation and project teams for select MM reports and transactions</p>
-      </header>
-      <nav className="mainnav">
-          <ul className="mainnav-menu">
-              <li className="mainnav-link"> <Link to="/"> <i className="fa fa-home" aria-hidden="true"></i> Home </Link></li>
-              <li className="mainnav-link"> <Link to="/show-matgroups"> <i className="far fa-images"></i>Show matgroups </Link></li>
-              <li className="mainnav-link"> <Link to="/show-vendors"><i className="fas fa-store-alt"></i> Vendor List </Link></li>
-              <li className="mainnav-link"> <Link to="/show-materials"> <i className="fas fa-search"></i>Materials List </Link></li>
-              <li className="mainnav-link"> <Link to="/wbswise-inv"> <i className="fas fa-street-view"></i> Project inv value </Link></li>
-              <li className="mainnav-link"> <Link to="/saleswise-inv"> <i className="fas fa-street-view"></i> Sales order inv value </Link></li>
-              <li className="mainnav-link"> <Link to="/matsearch"> <i className="fas fa-street-view"></i> Search material and get details </Link></li>
-          </ul>        
-        </nav> 
+      <Header />
+      <Mainnav />
                 
       <div>
         <Switch>
