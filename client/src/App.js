@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
+<<<<<<< HEAD
 
 import Header from './Header'
 import Mainnav from './Mainnav'
 
 import logo from './images/JALLogo.png'
+=======
+import Header from './Header';
+import Mainnav from './Mainnav';
+>>>>>>> cebe1101cd204bd9855d6b47e61a8b90901e19b8
 
 import FrontPage from './components/FrontPage'
 
@@ -32,7 +37,12 @@ class App extends Component {
     <Router>
     <div className="App">
       <Header />
+<<<<<<< HEAD
       <Mainnav />                
+=======
+      <Mainnav />
+                
+>>>>>>> cebe1101cd204bd9855d6b47e61a8b90901e19b8
       <div>
         <Switch>
           <Route exact path='/' component={FrontPage} />  
