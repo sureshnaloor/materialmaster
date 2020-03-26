@@ -80,7 +80,7 @@
 }
 
 .mainnav {
-    background: skyblue;  
+  background: #eed8d8;
 }
 .mainnav-menu {
   display: flex;
@@ -89,7 +89,7 @@
   align-items: center;
   height: 60px;
   list-style-type: none;
-  border-bottom: 1px solid #663399;
+  border: 1px solid #663399;
   padding-bottom: 20px;
   padding-top: 20px;
 }
@@ -100,7 +100,9 @@
   color: darkblue;
   font-weight: 900;
   opacity: 0.75;
-  padding: 5px 5px 5px;
+  padding: 12px 12px 12px;
+  border: 1px solid darkblue;
+  background: #e0e0f7;
 }
 
 .mainnav-link a:hover {
