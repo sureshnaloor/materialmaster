@@ -2,7 +2,7 @@ import React from 'react'
 import './FrontPage.css'
 import PlantwiseCumulative from './Stock/PlantwiseCumulative'
 import ValuePlantwise from './Stock/ValuePlantwise';
-// import BarChartComp from './Stock/BarC   hartcomp';
+// import BarChartComp from './Stock/BarChartcomp';
 import Top100value from './Stock/Top100value';
 import SalesStock from './SpecialStock/SalesStock';
 import ProjectStock from './SpecialStock/ProjectStock';
@@ -16,7 +16,8 @@ const FrontPage = () => {
             <div className="invpiechart"> <PlantwiseCumulative /> </div>
              
             <div className="tophundrd"> <Top100value /> </div> 
-            <div className="salesstk">  <ProjectStock /> <SalesStock /></div>
+            <div className="projstk">  <ProjectStock /> </div>
+            <div className ="projStock">  <SalesStock /></div>
             
         </div>
     )

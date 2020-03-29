@@ -7,10 +7,11 @@ body {
     /* margin-right: 5px; */
     margin-top: 0;
     display: grid;
-    grid-template-columns: 25vw 25vw 25vw 25vw;
-    grid-gap: 2px;
+    grid-template-columns: 10vw 30vw 30vw 30vw;
+    /* grid-gap: 2px; */
     background-color: cornsilk;
-    color:brown;    
+    /* color:brown;     */
+    max-width: 100vw;
 }
 
 .invfig {
@@ -23,41 +24,44 @@ body {
     grid-row-end: 2;
 }
 
-.invbarchart{
+/* .invbarchart{
     background-color: rgb(250, 250, 246);
     border-radius: 10%;    
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+} */
 
 .invpiechart {
     background-color: rgb(241, 230, 216);
     border-radius: 20px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    }
+
+.tophundrd {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-    }
-
-.tophundrd {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    width: 30vw;
 }
 
 .salesstk {
     grid-column-start: 3;
-    grid-column-end: 5;
-    /* grid-row-start: 3;
-    grid-row-end: 4; */
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2; 
+    width: 30vw;
 }
 
 .projstk {
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 30vw;
 }

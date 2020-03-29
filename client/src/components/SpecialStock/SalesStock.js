@@ -6,10 +6,10 @@ const titleStyle = {
     color: 'green',
     border: '1px solid red',
     boxShadow: '2px 2px 5px brown',
-    padding:"10px 10px 10px",
-    margin: "10px 10px 10px",
+    // padding:"10px 10px 10px",
+    // margin: "10px 10px 10px",
     backgroundColor:"lightblue",
-    width: '40vw'
+    width: '30vw'
 }
 
 const GetSortOrder = (objkey) =>  {  

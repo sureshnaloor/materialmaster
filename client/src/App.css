@@ -98,9 +98,15 @@
   font-family: 'Alatsi';
   text-decoration: none;
   color: darkblue;
-  font-weight: 900;
+  font-weight: 600;
+  font-size: 1rem;
   opacity: 0.75;
-  padding: 5px 5px 5px;
+  padding: 10px 10px 10px;
+  border: 0.05px solid red;
+  box-shadow: 1px 2px saddlebrown;
+  background:  #e0e0f7 ;
+  width: 20px;
+  
 }
 
 .mainnav-link a:hover {
