@@ -1,7 +1,9 @@
 body {
-    margin: 0px;
+  margin: 0px;
+  background: #e0e0f7;
 }
 
+<<<<<<< HEAD
 .containerfp{
     margin-left: 5px;
     /* margin-right: 5px; */
@@ -12,56 +14,67 @@ body {
     background-color: cornsilk;
     /* color:brown;     */
     max-width: 100vw;
+=======
+.containerfp {
+  /* margin-left: 5px; */
+  /* margin-right: 5px; */
+  margin-top: 0px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.333fr) minmax(0, 0.333fr) minmax(
+      0,
+      0.333fr
+    );
+  grid-gap: 5px;
+  background-color: mintcream;
+  color: brown;
+>>>>>>> efd114a6846779dadb0a6940fb0889b193287926
 }
 
-.invfig {
-    background-color: rgb(247, 247, 234);
-    border-radius: 5px;
-    padding: 10px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-
-/* .invbarchart{
-    background-color: rgb(250, 250, 246);
-    border-radius: 10%;    
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+/* .invfig {
+  background-color: rgb(247, 247, 234);
+  border-radius: 5px;
+  padding: 10px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 } */
 
-.invpiechart {
-    background-color: rgb(241, 230, 216);
-    border-radius: 20px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    }
+/* .invbarchart {
+  background-color: rgb(250, 250, 246);
+  border-radius: 10%;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+} */
+
+/* .invpiechart {
+  background-color: rgb(241, 230, 216);
+  border-radius: 20px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+} */
 
 .tophundrd {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    width: 30vw;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .salesstk {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2; 
-    width: 30vw;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .projstk {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    width: 30vw;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
