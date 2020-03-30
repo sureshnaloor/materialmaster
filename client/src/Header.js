@@ -21,7 +21,7 @@ export default function Header() {
             <span>Internal SAP Portal</span>
           </p>
           <h4>for estimation and project teams for Material data</h4>
-          <h6> Strictly for internal use only for authorised users</h6>
+          <h6> (Strictly for internal use only for authorised users)</h6>
         </div>
       </header>
     </div>

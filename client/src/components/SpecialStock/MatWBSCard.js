@@ -13,11 +13,6 @@ const RowMatdescStyle = {
   fontSize: '12px'
 };
 
-const headerStyle = {
-  fontSize: '14px',
-  color: 'gray'
-};
-
 const invTableStyle = {
   // width: "40vw",
   backgroundColor: 'lightblue',
@@ -52,7 +47,7 @@ const MatWBScard = props => {
           style={invTableStyle}
           className='table table-hover table-striped table-sm'
         >
-          <thead style={headerStyle} className='black white-text'>
+          <thead className='black white-text'>
             <tr>
               <th scope='col'>Serial No#</th>
               <th scope='col'>Project No:</th>
