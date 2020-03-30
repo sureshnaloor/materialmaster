@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import MaterialTransactions from '../Materials/MaterialTransactions'
 
 import '../../App.css';
 import axios from 'axios';
@@ -12,6 +13,9 @@ const Matsearchfc = () => {
     const [results,setResults] = useState([])
     // state and setter for spinner
     const [isSearching, setIsSearching] = useState(false) 
+
+    // state and setter for selected option matcode
+    const [matcode, setMatcode] = useState("10200567")
     
     // Now we call our hook, passing in the current searchTerm value.
   // The hook will only return the latest value (what we passed in) ...
@@ -64,17 +68,24 @@ const Matsearchfc = () => {
         placeholder="Search Matcodes"
         onChange={e => setSearchTerm(e.target.value)}
       />
-
+       
       {isSearching && <div>Searching ...</div>}
+           <hr />
+      <select onChange = {e => {setMatcode(e.target.value);
+                                console.log(e.target.value)}} id="matcodes">
+        {results.map((result, index) => (
+          <option key={index} value={result.MaterialCode}> {result.MaterialCode}   {result.MaterialDescription} </option>
+        ))}        
+      </select>    
 
-      {results.map((result,index) => (
-        <div key={index}>
-          <div className="container-autocom"> <h4>{result.MaterialCode}</h4> <h5> {result.MaterialDescription}</h5> <h4> {result.UOM}</h4></div>
-          
-        </div>
-      ))}
-    </div>
+      <MaterialTransactions matcode = {matcode} />
+
+      </div>   
   );
+
+  
+    
+  
 }
 
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom';
+// import {useParams} from 'react-router-dom';
 
 import axios from 'axios'
 
@@ -40,7 +40,8 @@ const invTableStyle2 = {
 }
 const MaterialTransactions = (props) => {
     const [matdocs, setMatdocs] = useState([]);
-    let {matcode }= useParams()
+    // let {matcode }= useParams()
+    let {matcode } = props
     console.log(matcode, typeof(matcode))
     useEffect(() => {
         // console.log(props.match.params.matcode)
@@ -63,7 +64,7 @@ const MaterialTransactions = (props) => {
             .catch(err => {
                 console.log(`error: there is some fetch error, check backend, error is: ${err.message}`)
             })
-    },[]);
+    },[matcode]);
 
     return (        
          <> <table style = {invTableStyle2} className="table table-hover table-striped table-sm">

@@ -101,18 +101,9 @@
   font-weight: 600;
   font-size: 1rem;
   opacity: 0.75;
-<<<<<<< HEAD
-  padding: 10px 10px 10px;
-  border: 0.05px solid red;
-  box-shadow: 1px 2px saddlebrown;
-  background:  #e0e0f7 ;
-  width: 20px;
-  
-=======
   padding: 12px 12px 12px;
   border: 1px solid darkblue;
   background: #e0e0f7;
->>>>>>> efd114a6846779dadb0a6940fb0889b193287926
 }
 
 .mainnav-link a:hover {
