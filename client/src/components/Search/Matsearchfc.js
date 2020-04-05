@@ -4,6 +4,9 @@ import MaterialTransactions from '../Materials/MaterialTransactions'
 import '../../App.css';
 import axios from 'axios';
 import useDebounce from '../../utility/use-debounce';
+import MaterialPurchases from '../Materials/MaterialPurchases';
+import ShowMaterialDetailssrch from '../Materials/ShowMaterialDetails_srch'
+
 
 
 const Matsearchfc = () => {
@@ -63,8 +66,8 @@ const Matsearchfc = () => {
 
   // UI with search input and results 
   return (
-    <div>
-      <input
+    <div className="matsearch">
+      <input type="text"
         placeholder="Search Matcodes"
         onChange={e => setSearchTerm(e.target.value)}
       />
@@ -74,11 +77,17 @@ const Matsearchfc = () => {
       <select onChange = {e => {setMatcode(e.target.value);
                                 console.log(e.target.value)}} id="matcodes">
         {results.map((result, index) => (
-          <option key={index} value={result.MaterialCode}> {result.MaterialCode}   {result.MaterialDescription} </option>
+          <option key={index} value={result.MaterialCode}> {result.MaterialCode} :::  {result.MaterialDescription} </option>
         ))}        
-      </select>    
+      </select>     <hr />
+      <ShowMaterialDetailssrch matcode = {matcode} /> <hr />
+      <h5> Purchase History for the selected Material: <span className="emph"> {matcode} </span> </h5>   
+      <MaterialPurchases matcode = {matcode} />
+      <hr />
 
+      <h5> Transaction History for the selected Material: <span className="emph">{matcode}</span> </h5>
       <MaterialTransactions matcode = {matcode} />
+      <hr />        
 
       </div>   
   );

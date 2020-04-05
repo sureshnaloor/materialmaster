@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom';
+// import {useParams} from 'react-router-dom';
 import axios from 'axios'
 
 const RowMatcodeStyle = {
@@ -39,7 +39,8 @@ const invTableStyle2 = {
 }
 const MaterialPurchases = (props) => {
     const [matpurch, setMatdocs] = useState([]);
-    let {matcode }= useParams()
+    // let {matcode }= useParams()
+    let {matcode } = props
     useEffect(() => {        
         axios.get("http://localhost:5000/api/matpurchases/"+matcode)
             .then(res => {
@@ -51,7 +52,7 @@ const MaterialPurchases = (props) => {
             .catch(err => {
                 console.log(`error: there is some fetch error, check backend, error is: ${err.message}`)
             })
-    },[]);
+    },[matcode]);
 
     return (
         

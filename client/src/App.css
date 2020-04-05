@@ -155,3 +155,29 @@
   align-content: center;
   justify-content: space-evenly;
 }
+
+/* material search component  */
+.matsearch input[type="text"] {
+  background-color: #3CBC8D;
+  width: 15%;
+  color: #fff;  
+  height: 26px;
+}
+
+.matsearch input::placeholder {
+  color: wheat;
+  font-size: 1.0em;
+  font-style: italic;
+}
+
+.matsearch select {
+  font-size: 0.9em;  
+  text-transform: uppercase;
+}
+
+.matsearch h5 span {
+  color: lightcoral;
+  font-size: 0.9em;
+  font-weight: 900;
+}
+
