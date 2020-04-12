@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-export default function Mainnav() {
+export default function Mainnav(props) {
   return (
     <div>
       <nav className='mainnav'>
@@ -44,9 +44,15 @@ export default function Mainnav() {
           </li>
 
           <li className='mainnav-link'>
-            <Link to='/sign-in'>
-              <i className='fas fa-sign-in-alt'></i> Sign In
-            </Link>
+            {!props.auth.isAuthenticated() ? (
+              <i className='fas fa-sign-in-alt' onClick={props.auth.login}>
+                Login
+              </i>
+            ) : (
+              <i className='fas fa-sign-out-alt' onClick={props.auth.login}>
+                Logout
+              </i>
+            )}
           </li>
         </ul>
       </nav>
