@@ -49,7 +49,7 @@ export default function Mainnav(props) {
                 Login
               </i>
             ) : (
-              <i className='fas fa-sign-out-alt' onClick={props.auth.login}>
+              <i className='fas fa-sign-out-alt' onClick={props.auth.logout}>
                 Logout
               </i>
             )}

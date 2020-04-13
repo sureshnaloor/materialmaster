@@ -29,6 +29,9 @@ import MaterialTransactions from './components/Materials/MaterialTransactions';
 import MaterialReceipts from './components/Materials/MaterialReceipts';
 import Matsearchfc from './components/Search/Matsearchfc';
 import Vendorsearch from './components/Search/Vendorsearch';
+
+import logout from './components/logout';
+import notSignedIn from './components/notSignedIn';
 import Callback from './Callback';
 import Auth from './Auth/Auth';
 
@@ -95,12 +98,14 @@ class App extends Component {
                 this.auth.isAuthenticated() ? (
                   <ProjectStock auth={this.auth} {...props} />
                 ) : (
-                  <Redirect to='/' />
+                  <Redirect to='/notSignedIn' />
                 )
               }
             />
 
             <Route path='/matsearch' exact={true} component={Matsearchfc} />
+            <Route path='/logout' exact component={logout} />
+            <Route path='/notSignedIn' exact component={notSignedIn} />
           </Switch>
         </div>
       </div>
