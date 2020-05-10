@@ -1,0 +1,7 @@
+a.active {
+    font-weight: bold;
+    color: white;
+    background: rgb(42, 104, 122);
+    border: 0.5px rgb(223, 144, 144) solid;
+    text-shadow: 2px 2px 4px #000000
+}
