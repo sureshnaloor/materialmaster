@@ -1,0 +1,1 @@
+the host string is obtained from MONGODB ATLAS in the COMMAND LINE TOOLS SECTION
