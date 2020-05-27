@@ -1,6 +1,7 @@
 import React from 'react';
+import './Mainnav.css';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Mainnav(props) {
   return (
@@ -8,39 +9,39 @@ export default function Mainnav(props) {
       <nav className='mainnav'>
         <ul className='mainnav-menu'>
           <li className='mainnav-link'>
-            <Link to='/'>
+            <NavLink to='/' exact >
               <i className='fa fa-home' aria-hidden='true'></i> Home
-            </Link>
+            </NavLink>
           </li>
           <li className='mainnav-link'>
-            <Link to='/show-matgroups'>
+            <NavLink to='/show-matgroups' >
               <i className='far fa-images'></i>Show matgroups
-            </Link>
+            </NavLink>
           </li>
           <li className='mainnav-link'>
-            <Link to='/show-vendors'>
+            <NavLink to='/show-vendors'>
               <i className='fas fa-store-alt'></i> Vendor List
-            </Link>
+            </NavLink>
           </li>
           <li className='mainnav-link'>
-            <Link to='/search-vendor'>
+            <NavLink to='/search-vendor'>
               <i className='fas fa-search'></i>Search vendor and get details
-            </Link>
+            </NavLink>
           </li>
           <li className='mainnav-link'>
-            <Link to='/wbswise-inv'>
+            <NavLink to='/wbswise-inv' >
               <i className='fas fa-street-view'></i> Project inv value
-            </Link>
+            </NavLink>
           </li>
           <li className='mainnav-link'>
-            <Link to='/saleswise-inv'>
+            <NavLink to='/saleswise-inv' >
               <i className='fas fa-street-view'></i> Sales order inv value
-            </Link>
+            </NavLink>
           </li>
           <li className='mainnav-link'>
-            <Link to='/matsearch'>
+            <NavLink to='/matsearch' >
               <i className='fas fa-search'></i> Search material and get details
-            </Link>
+            </NavLink>
           </li>
 
           <li className='mainnav-link'>
