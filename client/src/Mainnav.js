@@ -46,11 +46,11 @@ export default function Mainnav(props) {
           <li className='mainnav-link'>
             {!props.auth.isAuthenticated() ? (
               <i className='fas fa-sign-in-alt' onClick={props.auth.login}>
-                Login
+                <h6>Login</h6>
               </i>
             ) : (
               <i className='fas fa-sign-out-alt' onClick={props.auth.logout}>
-                Logout
+                <h6>Logout</h6>
               </i>
             )}
           </li>
