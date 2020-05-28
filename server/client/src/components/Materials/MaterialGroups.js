@@ -49,7 +49,7 @@ const ShowMaterialGroups = () => {
 	};
 
 	const fetchMatgroups = async () => {
-		const resp = await axios('http://localhost:5000/api/matcodes/matgroups');
+		const resp = await axios('/api/matcodes/matgroups');
 		const matgrlist = resp.data.sort(GetSortOrder('groupCode'));
 		setMatgroups(matgrlist);
 		setLoading(false);
@@ -62,7 +62,7 @@ const ShowMaterialGroups = () => {
 	if (isLoading) {
 		return (
 			<>
-				<img src={require('../../images/2.gif')} alt="loading" />{' '}
+				<img src={require('../../images/2.gif')} alt='loading' />{' '}
 				<h5> Loading.....</h5>
 			</>
 		);
@@ -72,14 +72,14 @@ const ShowMaterialGroups = () => {
 				{' '}
 				<table
 					style={invTableStyle1}
-					className="table table-hover table-striped table-sm"
+					className='table table-hover table-striped table-sm'
 				>
-					<thead className="black white-text">
+					<thead className='black white-text'>
 						<tr>
 							{/* <th ></th>  */}
-							<th scope="col">Serial No#</th>
-							<th scope="col">Group Code</th>
-							<th scope="col">Material group name</th>
+							<th scope='col'>Serial No#</th>
+							<th scope='col'>Group Code</th>
+							<th scope='col'>Material group name</th>
 						</tr>
 					</thead>
 					<tbody>
